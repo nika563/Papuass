@@ -1,0 +1,985 @@
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("Roboto/Roboto-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url("Roboto/Roboto-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url("Roboto/Roboto-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+$white: white;
+$dark-black: #1c2023;
+$red: #b04444;
+$yellow: #d18b22;
+$black: #000000;
+$grey: #c4c4c4;
+$font-family-medium: "Roboto-Medium";
+$font-family-bold: "Roboto-Bold";
+$font-family-regular: "Roboto-Regular";
+$background-color-transparent: transparent;
+* {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    color: $white;
+    background-color: $dark-black;
+    //overflow-x: hidden;
+}
+.cursor {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 666;
+    background-color: $background-color-transparent;
+    transition: .1s;
+}
+.cursor0 {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    transform: translate(-40%, -40%);
+    z-index: 666;
+}
+.first-page-logo {
+    display: flex;
+    transition: 600ms linear;
+    transition-delay: 1.5s;
+    opacity: 0;
+    .img-first-page-logo {
+        img {
+            width: 50px;
+            height: 56px;
+            margin: 40px 0px 0px 50px;
+        }
+    }
+    .p-first-page-logo {
+        font-family: $font-family-medium;
+        font-size: 15px;
+        margin: 55px 0px 0px 20px;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+.first-page-logo._active {
+    margin: 0px 0px 0px 0px;
+    opacity: 1;
+}
+/*.menu-hover:hover a {
+    background-color: $background-color-transparent;
+    text-shadow: 0 0 3px $yellow;
+}*/
+.first-page-ul {
+    list-style-type: none;
+    display: flex;
+    position: absolute;
+    margin: -50px 0px 0px 50rem;
+    background-color: $background-color-transparent;
+    z-index: 2;
+    a {
+        text-decoration: none;
+        background-color: $background-color-transparent;
+        text-shadow: 0 0 3px $black;
+    }
+    .hover {
+        margin-left: 0.625rem;
+        font-size: 15px;
+        font-family: $font-family-medium;
+        background-color: $background-color-transparent;
+        height: 20px;
+    }
+    .li-toggle {
+        width: 70px;
+        background-color: $background-color-transparent;
+        a {
+            background-color: $background-color-transparent;
+            .ru {
+                width: 30px;
+                height: 20px;
+                background-color: $background-color-transparent;
+            }
+            .ru-p {
+                display: inline;
+                margin: 0px 0px 0px 5px;
+                background-color: $background-color-transparent;
+            }
+        }
+        ul {
+            list-style-type: none;
+            margin: 5px 0px 0px -20px;
+            opacity: 0;
+            z-index: 2;
+            background-color: $background-color-transparent;
+            .ru {
+                padding: 5px;
+                background-color: $background-color-transparent;
+                //position: absolute;
+                a {
+                    display: flex;
+                    background-color: $background-color-transparent;
+                    img {
+                        width: 80px;
+                        height: 20px;
+                        background-color: $background-color-transparent;
+                    }
+                    p {
+                        display: inline;
+                        margin: 6px 0px 0px 5px;
+                        width: 70px;
+                        background-color: $background-color-transparent;
+                    }
+                }
+            }
+            .en {
+                padding: 0px 5px 0px 5px;
+                background-color: $background-color-transparent;
+                margin: 5px 0px 0px 0.36rem;
+                a {
+                    display: flex;
+                    background-color: $background-color-transparent;
+                    img {
+                        width: 30px;
+                        height: 20px;
+                        background-color: $background-color-transparent;
+                    }
+                    p {
+                        display: inline;
+                        margin: 9px 0px 0px 5px;
+                        background-color: $background-color-transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+.li-toggle:hover ul {
+    opacity: 1;
+    background-color: transparent;
+}
+/*.li-toggle ul .ru:hover .ru,
+.li-toggle ul .ru:hover .p-ru,
+.li-toggle ul .en:hover .en,
+.li-toggle ul .en:hover .p-en {
+    text-shadow: 0 0 3px $yellow;
+}*/
+// TODO: end ul
+.first-page-body {
+    width: 1000px;
+    .left-block {
+        .text {
+            .header {
+                font-family: $font-family-bold;
+                font-size: 40px;
+                width: 381px;
+                position: absolute;
+                background-color: $background-color-transparent;
+                margin: 2rem 0px 0px 10rem;
+                cursor: default;
+
+                transform: translate(0%, 40%);
+                opacity: 0;
+                transition: 300ms ease-out;
+            }
+            .header._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+            .text-round {
+                background-color: $yellow;
+                width: 15px;
+                height: 15px;
+                position: absolute;
+                border-radius: 100px;
+                margin: 10rem 0px 0px 20rem;
+                cursor: default;
+
+                transform: translate(0%, 240%);
+                opacity: 0;
+                transition: 300ms ease-out;
+                transition-delay: 350ms;
+            }
+            .text-round._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+            .main {
+                font-family: $font-family-medium;
+                margin: 13rem 0px 0px 10rem;
+                position: absolute;
+                color: $grey;
+                background-color: $background-color-transparent;
+                font-size: 15px;
+                cursor: default;
+
+                transform: translate(0%, 240%);
+                opacity: 0;
+                transition: 350ms ease-out;
+                transition-delay: 650ms;
+            }
+            .main._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+            hr {
+                width: 25rem;
+                margin: 14.5rem 0px 0px 10rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+                color: $grey;
+                cursor: default;
+
+                transform: translate(0%, 240%);
+                opacity: 0;
+                transition: 700ms ease-out;
+                transition-delay: 700ms;
+            }
+            hr._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+        }
+        .footer-one {
+            cursor: default;
+            .number {
+                font-family: $font-family-bold;
+                color: $yellow;
+                margin: 17rem 0px 0px 10rem;
+                position: absolute;
+                font-size: 36px;
+                background-color: $background-color-transparent;
+
+                transform: translate(0%, 240%);
+                opacity: 0;
+                transition: 600ms ease-out;
+                transition-delay: 880ms;
+            }
+            .number._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+            .tattoo {
+                font-family: $font-family-medium;
+                margin: 21.5rem 0px 0px 10.3rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+                font-size: 20px;
+                text-transform: capitalize;
+
+                transform: translate(0%, 240%);
+                opacity: 0;
+                transition: 600ms ease-out;
+                transition-delay: 900ms;
+            }
+            .tattoo._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+            .description {
+                color: $grey;
+                font-family: $font-family-regular;
+                margin: 24rem 0px 0px 10.3rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+                width: 238px;
+                font-size: 15px;
+
+                transform: translate(0%, 240%);
+                opacity: 0;
+                transition: 600ms ease-out;
+                transition-delay: 1s;
+            }
+            .description._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+        }
+        .footer-two {
+            cursor: default;
+            .number {
+                font-family: $font-family-bold;
+                color: $yellow;
+                margin: 17rem 0px 0px 25rem;
+                position: absolute;
+                font-size: 36px;
+                background-color: $background-color-transparent;
+
+                transform: translate(0%, 240%);
+                opacity: 0;
+                transition: 600ms ease-out;
+                transition-delay: 880ms;
+            }
+            .number._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+            .tattoo {
+                font-family: $font-family-medium;
+                margin: 21.5rem 0px 0px 25rem;
+                position: absolute;
+                text-transform: capitalize;
+                background-color: $background-color-transparent;
+                font-size: 20px;
+
+                transform: translate(0%, 240%);
+                opacity: 0;
+                transition: 600ms ease-out;
+                transition-delay: 900ms;
+            }
+            .tattoo._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+            .description {
+                color: $grey;
+                font-family: $font-family-regular;
+                margin: 24rem 0px 0px 25rem;
+                position: absolute;
+                width: 217px;
+                background-color: $background-color-transparent;
+                font-size: 15px;
+
+                transform: translate(0%, 240%);
+                opacity: 0;
+                transition: 600ms ease-out;
+                transition-delay: 1s;
+            }
+            .description._active {
+                transform: translate(0%, 0%);
+                opacity: 1;
+            }
+        }
+    }
+    .right-block {
+        .two-hand {
+            width: 49.9rem;
+            height: 50rem;
+            z-index: 1;
+            position: absolute;
+            margin: -15.6875rem 0px 0px 720px;
+            border-radius: 5px;
+        }
+        .singup:hover {
+            width: 9rem;
+            margin: 20rem 0px 0px 85.9rem;
+            transition: 550ms ease-out;
+            p {
+                color: $yellow;
+                transition: 200ms ease-out;
+            }
+        }
+        .singup {
+            background-color: $dark-black;
+            border-radius: 100px 0px 0px 100px;
+            width: 6rem;
+            margin: 20rem 0px 0px 88.9rem;
+            z-index: 2;
+            position: absolute;
+            box-shadow: 2px 4px 15px $black;
+            opacity: 0;
+            transition: 2s ease-out;
+            transition-delay: 600ms;
+            .singup-p {
+                font-family: $font-family-medium;
+                font-size: 15px;
+                padding: 20px;
+                border-radius: 100px 0px 0px 100px;
+                cursor: pointer;
+            }
+        }
+        .singup._active {
+            opacity: 1;
+        }
+        .sing-in:hover {
+            width: 9rem;
+            margin: 25rem 0px 0px 85.9rem;
+            transition: 550ms ease-out;
+            p {
+                color: $yellow;
+                transition: 600ms ease-out;
+            }
+        }
+        .sing-in {
+            background-color: $dark-black;
+            border-radius: 100px 0px 0px 100px;
+            width: 6rem;
+            margin: 25rem 0px 0px 88.9rem;
+            z-index: 2;
+            position: absolute;
+            box-shadow: 2px 4px 15px $black;
+            cursor: pointer;
+            opacity: 0;
+            transition: 2s ease-out;
+            transition-delay: 600ms;
+            p {
+                font-family: $font-family-medium;
+                font-size: 15px;
+                padding: 20px;
+                border-radius: 100px 0px 0px 100px;
+                transition-delay: 600ms;
+            }
+        }
+        .sing-in._active {
+            opacity: 1;
+        }
+        .right-block-ul {
+            display: flex;
+            list-style-type: none;
+            position: absolute;
+            margin: 30.5rem 0px 0px 83.5rem;
+            background-color: $background-color-transparent;
+            z-index: 2;
+            padding: 0px 39px 30px 0px;
+            opacity: 0;
+            transition: 1s ease-out;
+            transition-delay: 1.5s;
+            .telega {
+                padding: 3px;
+                background-color: $background-color-transparent;
+                width: 36px;
+                height: 36px;
+                border: 2px solid $background-color-transparent;
+                a {
+                    background-color: $background-color-transparent;
+                    img {
+                        width: 35px;
+                        height: 35px;
+                        background-color: $background-color-transparent;
+                    }
+                }
+            }
+            /*.telega:hover {
+                border: 2px solid $yellow;
+                border-radius: 100%;
+                transition: 950ms ease-out;
+            }*/
+            .face {
+                padding: 3px 3px 3px 3px;
+                margin: 0px 0px 0px 3px;
+                background-color: $background-color-transparent;
+                width: 36px;
+                height: 36px;
+                border: 2px solid $background-color-transparent;
+                a {
+                    background-color: $background-color-transparent;
+                    img {
+                        width: 35px;
+                        height: 35px;
+                        background-color: $background-color-transparent;
+                    }
+                }
+            }
+            /*.face:hover {
+                border: 2px solid $yellow;
+                border-radius: 100%;
+                padding: 3px;
+                width: 36px;
+                height: 36px;
+                transition: 950ms ease-out;
+            }*/
+            .insta {
+                background-color: $background-color-transparent;
+                padding: 3px 3px 3px 3px;
+                margin: 0px 0px 0px 3px;
+                width: 36px;
+                height: 36px;
+                border: 2px solid $background-color-transparent;
+                a {
+                    background-color: $background-color-transparent;
+                    img {
+                        width: 30px;
+                        height: 35px;
+                        background-color: $background-color-transparent;
+                        padding: 0px 0px 0px 3px;
+                    }
+                }
+            }
+            /*.insta:hover {
+                border: 2px solid $yellow;
+                border-radius: 100%;
+                padding: 3px 3px 3px 3px;
+                width: 36px;
+                height: 36px;
+                transition: 950ms ease-out;
+            }*/
+        }
+        .right-block-ul._active {
+            opacity: 1;
+        }
+    }
+    .bottom-block {
+        .hr-one {
+            width: 94.8rem;
+            margin: 34.4rem 0px 0px 0rem;
+            height: 3px;
+            position: absolute;
+            background-color: $white;
+        }
+        .amimation {
+            margin: 28.5rem 0px 0px 40rem;
+            position: absolute;
+            z-index: 4;
+            transform: rotate(0deg);
+            background-color: $background-color-transparent;
+            animation-name: rotate_animation;
+            animation-duration: 8s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes rotate_animation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        a {
+            .arrow {
+                margin: 32.5rem 0px 0px 43.9rem;
+                position: absolute;
+                width: 35px;
+                z-index: 4;
+                background-color: $background-color-transparent;
+            }
+        }
+        .round {
+            width: 180px;
+            height: 180px;
+            position: absolute;
+            border-radius: 100px;
+            margin: 28rem 0px 0px 39.375rem;
+            z-index: 3;
+        }
+        .round-background {
+            width: 185px;
+            height: 81.5px;
+            position: absolute;
+            margin: 34.4rem 0px 0px 39.1rem;
+            z-index: 4;
+            background-color: $background-color-transparent;
+        }
+    }
+}
+//? first-page-end
+.number-block-two {
+    position: absolute;
+    margin: 710px 0px 0px 0px;
+    background-color: $background-color-transparent;
+    .header {
+        .hr-for-header {
+            background-color: $yellow;
+            width: 80px;
+            border: 2px solid $yellow;
+            border-radius: 50px;
+            transform: rotate(90deg);
+            margin: 35px 0px 0px 3.125rem;
+            position: absolute;
+
+            transition: all 900ms;
+            transition-delay: 0.6s;
+            opacity: 0;
+        }
+        .hr-for-header._active {
+            opacity: 1;
+            margin: 0px 0px 0px 3.125rem;
+        }
+        .header-text {
+            font-family: $font-family-bold;
+            font-size: 30px;
+            display: flex;
+            margin: 2rem 0px 0px 6.875rem;
+            position: absolute;
+            width: 500px;
+
+            transition: all 900ms;
+            transition-delay: 0.6s;
+            opacity: 0;
+            .orange-text {
+                color: $yellow;
+                font-family: $font-family-bold;
+                font-size: 30px;
+                padding: 0px 0px 0px 10px;
+            }
+        }
+        .header-text._active {
+            opacity: 1;
+            margin: -1.25rem 0px 0px 6.875rem;
+        }
+    }
+    .text-number {
+        display: flex;
+        background-color: $background-color-transparent;
+        position: absolute;
+        .one {
+            margin: 100px 0px 0px 4rem;
+            .number-one {
+                height: 150px;
+                width: 70px;
+                margin: 50px 0px 0px 0px;
+                position: absolute;
+                background-color: $background-color-transparent;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .number-one._active {
+                opacity: 1;
+                margin: 0px 0px 0px 0px;
+            }
+            .header {
+                color: $yellow;
+                font-family: $font-family-bold;
+                font-size: 18px;
+                width: 194px;
+                position: absolute;
+                margin: 5rem 0px 0px 5.25rem;
+                background-color: $background-color-transparent;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .header._active {
+                opacity: 1;
+                margin: 1.5rem 0px 0px 5.25rem;
+            }
+            .description {
+                font-size: 13px;
+                font-family: $font-family-regular;
+                margin: 7rem 0px 0px 5.25rem;
+                width: 13rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .description._active {
+                opacity: 1;
+                margin: 4rem 0px 0px 5.25rem;
+            }
+        }
+        .two {
+            margin: 100px 0px 0px 23rem;
+            .number-two {
+                height: 150px;
+                width: 98px;
+                position: absolute;
+                background-color: $background-color-transparent;
+                margin: 3.125rem 0px 0px 0px;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .number-two._active {
+                opacity: 1;
+                margin: 0rem 0px 0px 0rem;
+            }
+            .header {
+                color: $yellow;
+                font-family: $font-family-bold;
+                font-size: 18px;
+                width: 194px;
+                margin: 5rem 0px 0px 7rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .header._active {
+                opacity: 1;
+                margin: 1.5rem 0px 0px 7rem;
+            }
+            .description {
+                font-size: 13px;
+                font-family: $font-family-regular;
+                margin: 7rem 0px 0px 7rem;
+                width: 13rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .description._active {
+                opacity: 1;
+                margin: 4rem 0px 0px 7rem;
+            }
+        }
+        .three {
+            margin: 100px 0px 0px 23rem;
+            .number-three {
+                height: 150px;
+                width: 100px;
+                position: absolute;
+                background-color: $background-color-transparent;
+                margin: 3.125rem 0px 0px 0px;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .number-three._active {
+                opacity: 1;
+                margin: 0rem 0px 0px 0rem;
+            }
+            .header {
+                color: $yellow;
+                font-family: $font-family-bold;
+                font-size: 18px;
+                width: 194px;
+                margin: 5rem 0px 0px 7rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .header._active {
+                opacity: 1;
+                margin: 1.5rem 0px 0px 7rem;
+            }
+            .description {
+                font-size: 13px;
+                font-family: $font-family-regular;
+                margin: 7rem 0px 0px 7rem;
+                width: 12rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .description._active {
+                opacity: 1;
+                margin: 4rem 0px 0px 7rem;
+            }
+        }
+        .four {
+            margin: 100px 5rem 0px 23rem;
+            .number-four {
+                height: 150px;
+                width: 110px;
+                position: absolute;
+                background-color: $background-color-transparent;
+                margin: 3.125rem 0px 0px 0px;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .number-four._active {
+                opacity: 1;
+                margin: 0rem 0px 0px 0rem;
+            }
+            .header {
+                color: $yellow;
+                font-family: $font-family-bold;
+                font-size: 18px;
+                width: 194px;
+                margin: 5rem 0px 0px 7rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .header._active {
+                opacity: 1;
+                margin: 1.5rem 0px 0px 7rem;
+            }
+            .description {
+                font-size: 13px;
+                font-family: $font-family-regular;
+                margin: 7rem 0px 0px 7rem;
+                width: 12rem;
+                position: absolute;
+                background-color: $background-color-transparent;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .description._active {
+                opacity: 1;
+                margin: 4rem 0px 0px 7rem;
+            }
+        }
+    }
+}
+//? first-page-number-block-end
+.place-block {
+    .picture-for-zoom{
+        position: fixed;
+        border-radius: 100%;
+        width: 100px;
+        height: 1000px;
+        background-color: #d18b227d;
+    }
+    .img-for-place-block {
+        .background-place {
+            background-color: $background-color-transparent;
+            position: absolute;
+            margin: 72rem 0px 0px 4rem;
+            width:  400px;
+            height: 570px;
+            z-index: 1;
+            cursor: pointer;
+
+            transition: all 900ms;
+            transition-delay: 1s;
+            opacity: 0;
+        }
+        .background-place._active {
+            opacity: 1;
+            margin: 68rem 0px 0px 4rem;
+        }
+        .bock-with-telephone {
+            .background-telephone {
+                background-color: $background-color-transparent;
+                position: absolute;
+                margin: 79rem 0px 0px 23.6rem;
+                width: 180px;
+                height: 385px;
+                z-index: 2;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .background-telephone._active {
+                opacity: 1;
+                margin: 75rem 0px 0px 23.6rem;
+            }
+            .screen {
+                background-color: $background-color-transparent;
+                position: absolute;
+                margin: 79rem 0px 0px 23rem;
+                width: 200px;
+                height: 400px;
+                z-index: 3;
+                cursor: pointer;
+
+                transition: all 900ms;
+                transition-delay: 1s;
+                opacity: 0;
+            }
+            .screen._active {
+                opacity: 1;
+                margin: 74.875rem 0px 0px 23rem;
+            }
+        }
+    }
+    .text-for-place-block {
+        .header {
+            background-color: $background-color-transparent;
+            position: absolute;
+            margin: 79.5rem 0px 0px 43rem;
+            font-size: 30px;
+            font-family: $font-family-bold;
+            color: $yellow;
+            z-index: 5;
+
+            transition: all 900ms;
+            transition-delay: 1.5s;
+            opacity: 0;
+            }
+        .header._active {
+            opacity: 1;
+            margin: 73.75rem 0px 0px 43rem;
+        }
+        .description-one {
+            background-color: $background-color-transparent;
+            position: absolute;
+            font-family: $font-family-regular;
+            font-size: 18px;
+            margin: 87.5rem 0px 0px 43rem;
+            width: 456px;
+
+            transition: all 900ms;
+            transition-delay: 1.5s;
+            opacity: 0;
+        }
+        .description-one._active {
+            opacity: 1;
+            margin: 79.5rem 0px 0px 43rem;
+        }
+        .description-two {
+                background-color: $background-color-transparent;
+                position: absolute;
+                font-family: $font-family-regular;
+                font-size: 18px;
+                margin: 95.5rem 0px 0px 43rem;
+                width: 456px;
+
+                transition: all 900ms;
+                transition-delay: 1.5s;
+                opacity: 0;
+        }
+        .description-two._active {
+            opacity: 1;
+            margin: 87.5rem 0px 0px 43rem;
+        }
+        .description-three {
+            background-color: $background-color-transparent;
+            position: absolute;
+            font-family: $font-family-regular;
+            font-size: 18px;
+            margin: 105rem 0px 0px 43rem;
+            width: 456px;
+
+            transition: all 900ms;
+            transition-delay: 1.5s;
+            opacity: 0;
+        }
+        .description-three._active {
+            opacity: 1;
+            margin: 95.5rem 0px 0px 43rem;
+        }
+    }
+    .tattoo-mashine {
+        background-color: $background-color-transparent;
+        position: absolute;
+        margin: 80rem 0px 0px 81.6rem;
+        //width: 200px;
+        height: 400px;
+        transform: scale(-1, 1);
+
+        transition: all 900ms;
+        transition-delay: 1s;
+        opacity: 0;
+    }
+    .tattoo-mashine._active {
+        opacity: 1;
+        margin: 75rem 0px 0px 81.6rem;
+    }
+}
+//? first-page-place-block-end
